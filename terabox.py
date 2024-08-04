@@ -24,22 +24,22 @@ load_dotenv('config.env', override=True)
 
 logging.basicConfig(level=logging.INFO)
 
-ADMINS = list(map(int, os.environ.get('ADMINS', '6695586027').split()))
+ADMINS = list(map(int, os.environ.get('ADMINS', '2034654684').split()))
 if not ADMINS:
     logging.error("ADMINS variable is missing! Exiting now")
     exit(1)
     
-api_id = os.environ.get('TELEGRAM_API', '')
+api_id = os.environ.get('TELEGRAM_API', '25377875')
 if not api_id:
     logging.error("TELEGRAM_API variable is missing! Exiting now")
     exit(1)
 
-api_hash = os.environ.get('TELEGRAM_HASH', '')
+api_hash = os.environ.get('TELEGRAM_HASH', 'cf80e342be48570ca2e4c9d2c7695413')
 if not api_hash:
     logging.error("TELEGRAM_HASH variable is missing! Exiting now")
     exit(1)
     
-bot_token = os.environ.get('BOT_TOKEN', '')
+bot_token = os.environ.get('BOT_TOKEN', '7011638444:AAGqffTejoqZ8hegXPAsf_ddWJNtrYWfzsY')
 if not bot_token:
     logging.error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
@@ -170,8 +170,8 @@ async def start_command(client, message):
             f"Welcome, {user_mention}.\n\n"
             "🌟 I am a terabox downloader bot. Send me any terabox link and I will download it within a few seconds and send it to you ✨."
         )
-        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/ultroid_official")
-        developer_button = InlineKeyboardButton("Developer ⚡️", url="https://t.me/ultroidxTeam")
+        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/purplebotz")
+        developer_button = InlineKeyboardButton("MOVIES ⚡️", url="https://t.me/+ylvI8ZZcge80MWRl")
         reply_markup = InlineKeyboardMarkup([[join_button, developer_button]])
         await message.reply_text(reply_message, reply_markup=reply_markup)
     else:
@@ -188,7 +188,7 @@ async def start_command(client, message):
                 "This is an ads token. If you pass 1 ad, you can use the bot for 12 hours after passing the ad.\n\n"
             )
             token_button = InlineKeyboardButton("Get Token", url=link)
-            tutorial_button = InlineKeyboardButton("How to Verify", url="https://t.me/ultroid_official/18")
+            tutorial_button = InlineKeyboardButton("How to Verify", url="https://t.me/ezpzsupport/18")
             reply_markup = InlineKeyboardMarkup([[token_button], [tutorial_button]])
             await message.reply_text(message_text, reply_markup=reply_markup)
         else:
@@ -308,7 +308,7 @@ async def handle_message(client, message: Message):
     is_member = await is_user_member(client, user_id)
 
     if not is_member:
-        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/ultroid_official")
+        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/purplebotz")
         reply_markup = InlineKeyboardMarkup([[join_button]])
         await message.reply_text("You must join my channel to use me.", reply_markup=reply_markup)
         return

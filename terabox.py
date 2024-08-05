@@ -310,7 +310,9 @@ async def handle_message(client, message: Message):
     if not is_member:
         join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/purplebotz")
         reply_markup = InlineKeyboardMarkup([[join_button]])
-        await message.reply_text("You must join my channel to use me.", reply_markup=reply_markup)
+        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/terabox_downloader_botfree")
+        reply_markup = InlineKeyboardMarkup([[join_button]])
+        await message.reply_text("You must join my channel to use me.\n AFTER JOIN USE THIS COMMAND- /start ", reply_markup=reply_markup)
         return
 
     terabox_link = message.text.strip()
